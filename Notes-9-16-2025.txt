@@ -1,0 +1,79 @@
+9/16/2025
+
+To Activate IAM billing information and creating a budget for AWS 
+
+	- Click on Account ID in the dropdown click on Billing and Management
+		- Scroll down and get information about cost summary and breakdowns 
+
+Create a Budget for AWS
+	- while in Billing and Management in the left pane scroll down to Budget and Planning 
+	- click on budget and click on the orange button that says Create budget
+		- budget setup use a template (simplified) 
+		- Template choose either Zero spend budget or Monthly cost budget
+		- Budget name create an name for it  and email recipients add the email(s) that will be notified 
+		- Click on the orange Create budget button
+	- Now you should be alerted to any charges and monitor any active services and if its being charged
+
+
+Changing Region
+	- click on arrow next to name of county in top right
+	- click the Region you want to use
+
+Manage Regions
+	- at the bottom of the region list on the left click on Manage Regions
+	- scroll down to AWS Regions click in the boxes of the region you want to manage 
+	- you can now disable/enable that region 
+
+Create Security Group with SSH
+	- create New Security Group, Do Not Use Default
+		- Go to Security Group
+		- click on create Security Group
+		- Name Security Group and give an description, leave VPC as is
+		- Configure Inbound Rules
+			- Type = HTTP
+			- Protocol = TCP
+			- Port Range = 80
+			- Source = Anywhere-IPv4, 0.0.0.0/0
+			- Description = Whatever you want
+		- Configure Inbound Rules 
+			- Type = SSH
+			- Protocol = TCP
+			- Port Range = 22
+			- Source = Anywhere-IPv4, 0.0.0.0/0
+			- Description = Whatever you want 
+		- Outbound Rules: DO NOT TOUCH
+		- Tags 
+			- Key = name
+			- Value = whatever
+		- Click on the orange Create Security Group button at bottom
+
+Connect to Instance 
+	- After creating the instance using the security group with both HTTP ans SSH, go to your instances and click on the instance 
+	- then click on Connect, it will take you to the connect screen 
+		- Connect using a Public IP
+		- Click Connect
+		- it will take you to a command line 
+		- you can ping and run commands from this console 
+			- some commands 
+				- ping 8.8.8.8 or ping google.com to stop ctrl z or ctrl c
+
+Create Launch Templates
+	- go to instances click on Actions and Image and templates and then click on create template from instance 
+		-name the template and template version description
+		- check through everything and make sure all the information is correct
+		- check in the summary if everything match up 
+		- click on orange Create launch template
+
+Launch Templates
+	- Click on the Action button the first 2 options are Launch Instance from template and modify template
+	- Launch Instance from template
+		- Choose the source template(Instance you plan on using) and in the second box choose the version 
+		- scroll down and make sure the information is correct 
+		- in the Summary box on the right you can choose how many instances you want to launch, also double check all the information is correct
+		- if everything looks correct click on the orange Launch instance button
+	- Modify template
+		- name template version description
+		- you can change the information to create a new version of the instance
+			-image, instance type, storage, user data, etc.
+		- once done click the orange create template version button
+		- when you go back to Launch Template it will show in Latest Version 2, if you create more version it will show the number of versions created
