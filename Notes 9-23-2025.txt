@@ -46,13 +46,14 @@ echo "# >> README.md
 - git add = used to add new or modified files from your working directory to the Git staging, and prepares the files to be included in the next commit.
  
 - git commit -m "first commit" = used to commit the files from staging 
+	- m = messaging provides a short description of changes you're committing
  
 - git branch -M main =  renames the current branch to main
 	- git branch = This is the core Git command for managing branches.
 	- m = This flag stands for "move" or "rename." It indicates that you intend to rename a branch.
 	- main = This is the new name you are giving to the current branch
 
-- git remote add origin = used to establish a connection between your local repository and a remote repository
+- git remote add origin "repo ip address" = used to establish a connection between your local repository and a remote repository
 
 - git push -u origin main = used to push changes from your local repository to the remote repository
 
